@@ -1,0 +1,11 @@
+1. Download facebook-sdk from developers.facebook.com
+
+OR
+
+1. Download facebook-sdk from here
+https://codeload.github.com/pythonforfacebook/facebook-sdk/zip/master
+
+
+2. Extract zip file and click on setup.py
+3. Open cmd and goto downloads(facebook sdk folder) directory
+4. Type python setup.py install
