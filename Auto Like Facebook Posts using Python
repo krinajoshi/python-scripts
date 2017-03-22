@@ -1,0 +1,29 @@
+Auto Like Facebook Posts using Python
+
+For auto liking facebook posts we will need following 2 things:
+1. Access token
+2. Object Id
+
+Do you know where to get this from????
+
+Goto: 
+developers.facebook.com->Tools and Support->GraphAPI Explorer
+
+1. Copy access token
+2. Click on submit
+3. Copy id
+
+Following is the auto-like script written in PYTHON:
+
+import facebook
+token = “Your access token”
+graph = facebook.GraphAPI(token) 
+profile = graph.get_object(“Your object id”)
+posts = graph.get_connections(profile[‘id’],”posts”)
+for post in posts[‘data’]:
+    try:
+        graph.put_object(post[‘id’],”likes”)
+        print “I am liking this topic :” +post[“message”]
+    except:         continue
+Make sure that you have facebook SDK.If you don’t know how to use facebook SDK, kindly check the following link:
+http://www.newtechcj.com/python/use-facebook-sdk-in-python/
