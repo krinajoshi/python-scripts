@@ -1,0 +1,26 @@
+Following are the steps to send an email using python:
+
+import smtplib
+
+to = ’email-to’  #enter the email id of the person whom you want to send email
+gmail_user = ‘Your email id’
+gmail_pwd = ‘Your Password’
+
+smtpserver = smtplib.SMTP(“smtp.gmail.com”,587) #hostname and port
+smtpserver.ehlo()
+smtpserver.starttls()
+smtpserver.ehlo
+smtpserver.login(gmail_user, gmail_pwd)
+
+ 
+
+#If you get an authentication error: You will need to enable secure apps
+
+#GOTO : https://www.google.com/settings/security/lesssecureapps and  select enable apps
+
+header = ‘To:’ + to + ‘\n’ + ‘From: ‘ + gmail_user + ‘\n’ + ‘Subject:Sending mail using python \n’
+print header
+msg = header + ‘\n this is test msg from newtechcj.com \n\n’
+smtpserver.sendmail(gmail_user, to, msg)
+print ’email sent!’
+smtpserver.close()
